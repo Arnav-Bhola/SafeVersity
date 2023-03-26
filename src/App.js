@@ -1,32 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 import { db } from "./firebase_setup/firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-
+import { collection, addDoc } from "firebase/firestore";
+import Form from "./components/Form/Form";
 function App() {
-  const [users, setUsers] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
+  const addPost = async (postTitle, postType, postDate, postDesc) => {
+    await addDoc(postsCollectionRef, {
+      Title: postTitle,
+      Type: postType,
+      Date: postDate,
+      Description: postDesc,
+    });
+  };
 
-    getUsers();
-  });
-  return (
-    <div className='App'>
-      {users.map((user) => {
-        return (
-          <div>
-            <h1>Name: {user.name}</h1>
-            <h1>Age: {user.age}</h1>
-          </div>
-        );
-      })}
-    </div>
-  );
+  // useEffect(() => {
+  //   const getPosts = async () => {
+  //     const data = await getDocs(postsCollectionRef);
+  //     setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   };
+
+  //   getPosts();
+  // });
+  return <Form onSubmitHandler={addPost} />;
 }
 
 export default App;

@@ -3,7 +3,7 @@ import FormCheckbox from "./Form-checkbox";
 
 import styles from "./Form.module.scss";
 
-const Form = () => {
+const Form = (props) => {
   const [briefSummary, setbriefSummary] = useState("");
   const [incidentType, setIncidentType] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -30,7 +30,7 @@ const Form = () => {
     if (enteredDate === "" || incidentType === "" || briefSummary === "" || author === "") {
       return;
     }
-    console.log([author, enteredDate, incidentType, briefSummary]);
+    props.onSubmitHandler(author, incidentType, enteredDate, briefSummary);
   };
 
   return (
@@ -42,7 +42,7 @@ const Form = () => {
           className={`${styles["label"]}`}
           htmlFor='incident-author'
         >
-          Your Name:&nbsp;
+          Your Title:&nbsp;
         </label>
         <input
           className={styles["nameLabel"]}
