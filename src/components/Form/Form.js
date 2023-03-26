@@ -31,6 +31,9 @@ const Form = (props) => {
       return;
     }
     props.onSubmitHandler(author, incidentType, enteredDate, briefSummary);
+    setAuthor("");
+    setEnteredDate("");
+    setbriefSummary("");
   };
 
   return (
@@ -49,6 +52,7 @@ const Form = (props) => {
           type='text'
           id='incident-author'
           name='incident-author'
+          value={author}
           required
           onChange={handleAuthorChange}
         />
@@ -64,6 +68,7 @@ const Form = (props) => {
           type='date'
           id='incident-date'
           name='incident-date'
+          value={enteredDate}
           required
           onChange={handleDateChange}
         />

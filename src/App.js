@@ -10,6 +10,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Support from "./components/Support/Support";
 import Footer from "./components/Home/Footer";
+import Posts from "./components/Posts/Posts";
 
 function App() {
   const postsCollectionRef = collection(db, "posts");
@@ -55,6 +56,10 @@ function App() {
           <Route
             path='login'
             element={<Login />}
+          />
+          <Route
+            path='posts'
+            element={<Posts />}
           />
           <Route
             path='*'

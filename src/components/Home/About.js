@@ -1,5 +1,6 @@
 import React from "react";
 import { FaDesktop, FaHeart, FaCog } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -45,6 +46,12 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Link
+        to='/posts'
+        className='w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off'
+      >
+        Read All Posts
+      </Link>
     </div>
   );
 };

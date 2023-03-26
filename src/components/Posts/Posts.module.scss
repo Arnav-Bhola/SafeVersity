@@ -1,0 +1,30 @@
+.header {
+  text-align: center;
+  font-weight: 600;
+  color: black;
+}
+
+.postTop {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.postType {
+  margin: 0;
+  color: white;
+}
+
+.postDesc {
+  color: white;
+  margin-top: 1rem;
+}
+
+.endHeader {
+  text-align: center;
+  color: white;
+}
+
+.list {
+  margin-bottom: 2rem;
+}
