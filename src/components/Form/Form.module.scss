@@ -7,15 +7,18 @@
 .post-incident {
   padding: 2rem 3rem;
   margin: 2rem;
-  box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-  background-color: #383838;
+  margin-bottom: auto;
+  // box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+  background-color: lighten(rgba(0, 0, 0, 0.8), 3%);
   max-width: 90rem;
   width: 90%;
   color: white;
   font-family: "Noto Sans JP", sans-serif;
   margin-left: 50%;
-  transform: translateX(-50%);
+  margin-top: 50vh;
+  overflow: hidden;
+  max-height: 100vh;
+  transform: translate(-50%, -50%);
 }
 .header {
   margin-bottom: 2rem;
@@ -28,7 +31,12 @@
   font-size: 1.7rem;
 }
 
-.label-option {
+.nameLabel {
+  margin-bottom: 1.7rem;
+}
+
+.label-option,
+.date-input {
   font-size: 1.5rem;
 }
 
@@ -54,24 +62,30 @@
 
 .button-post {
   margin-top: 2rem;
-  background-color: #8a2b06;
-  width: 15rem;
-  height: 2.8rem;
-  border-radius: 100vw;
-  font-size: 2rem;
-  font-weight: 600;
+  background-color: #ffffff;
+  width: 18rem;
+  height: 3.6rem;
+  font-size: 2.3rem;
+  font-weight: 550;
   margin-left: 50%;
   transform: translateX(-50%);
-  color: #ffffff;
+  color: lighten(rgba(0, 0, 0, 0.8), 3%);
+  opacity: 0.6;
+  outline: none;
+  transition: all 0.3s;
+  border: none;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .date-input {
-  font-size: 1.3rem;
   text-align: center;
 }
 
 .posts {
-  background-color: #383838;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;

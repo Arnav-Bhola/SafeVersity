@@ -41,12 +41,13 @@ const Form = () => {
 
       <form id='template-post'>
         <label
-          className={styles.label}
+          className={`${styles["label"]}`}
           htmlFor='incident-author'
         >
           Your Name:&nbsp;
         </label>
         <input
+          className={styles["nameLabel"]}
           type='text'
           id='incident-author'
           name='incident-author'
@@ -123,14 +124,6 @@ const Form = () => {
           Post
         </button>
       </form>
-      <div className='displayData'>
-        <ul>
-          <li>{showData && <div>{author}</div>}</li>
-          <li>{showData && <div>{enteredDate}</div>}</li>
-          <li>{showData && <div>{incidentType}</div>}</li>
-          <li>{showData && <div>{briefSummary}</div>}</li>
-        </ul>
-      </div>
     </section>
   );
 };
