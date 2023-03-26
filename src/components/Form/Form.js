@@ -8,7 +8,6 @@ const Form = () => {
   const [incidentType, setIncidentType] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [author, setAuthor] = useState("");
-  const [showData, setShowData] = useState(false);
 
   const briefSummaryChangeHandler = (event) => {
     setbriefSummary(event.target.value);
@@ -32,7 +31,6 @@ const Form = () => {
       return;
     }
     console.log([author, enteredDate, incidentType, briefSummary]);
-    setShowData(true);
   };
 
   return (
