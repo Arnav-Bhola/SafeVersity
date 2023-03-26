@@ -38,31 +38,31 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path=''
+            path='/'
             element={<Home />}
           />
           <Route
-            path='home'
+            path='/home'
             element={<Home />}
           />
           <Route
-            path='post'
+            path='/post'
             element={<Form onSubmitHandler={addPost} />}
           />
           <Route
-            path='support'
+            path='/support'
             element={<Support />}
           />
           <Route
-            path='login'
+            path='/login'
             element={<Login />}
           />
           <Route
-            path='posts'
+            path='/posts'
             element={<Posts />}
           />
           <Route
-            path='*'
+            path='/*'
             element={<FourZeroFour />}
           />
         </Routes>
